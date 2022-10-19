@@ -6,7 +6,7 @@
 /*   By: xle-boul <xle-boul@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:29:45 by xle-boul          #+#    #+#             */
-/*   Updated: 2022/10/20 00:22:40 by xle-boul         ###   ########.fr       */
+/*   Updated: 2022/10/20 00:45:19 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	dinner(t_data *all)
 
 void	only_one_philo(t_data *all)
 {
-	printf("%lld\t1, has taken a fork\n", timestamp());
+	printf("%lld\t1 has taken a fork\n", timestamp());
 	philo_sleep(all->ttdie);
-	printf("%lld\t1, died\n", timestamp());
+	printf("%lld\t1 died\n", timestamp());
 }
