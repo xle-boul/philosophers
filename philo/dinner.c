@@ -6,7 +6,7 @@
 /*   By: xle-boul <xle-boul@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:29:45 by xle-boul          #+#    #+#             */
-/*   Updated: 2022/10/19 23:46:09 by xle-boul         ###   ########.fr       */
+/*   Updated: 2022/10/20 00:22:40 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ bool	check_if_dead(t_data *all, int i)
 	{
 		print_line(&(all->philo[i]), "died");
 		pthread_mutex_lock(&(all->print_mutex));
-		all->death = 1;
+		all->end = 1;
 		return (true);
 	}
 	return (false);
@@ -29,11 +29,11 @@ bool	check_if_finished(t_data *all)
 	int	i;
 	int	count;
 
-	while (all->death == 0)
+	while (all->end == 0)
 	{
 		i = 0;
 		count = 0;
-		while (i < all->num_of_philo && all->death == 0)
+		while (i < all->num_of_philo && all->end == 0)
 		{
 			if (check_if_dead(all, i) == true)
 				return (true);
@@ -43,7 +43,7 @@ bool	check_if_finished(t_data *all)
 		}
 		if (count == i)
 		{
-			all->death = 1;
+			all->end = 1;
 			pthread_mutex_lock(&(all->print_mutex));
 			printf("all the philos ate at least %d times\n", all->must_eat);
 			return (true);
@@ -70,11 +70,8 @@ int	dinner(t_data *all)
 	}
 	if (check_if_finished(all) == true)
 		pthread_mutex_unlock(&(all->print_mutex));
-	while (i > 0)
-	{
+	while (--i >= 0)
 		pthread_join(all->philo[i].thread, NULL);
-		i--;
-	}
 	return (0);
 }
 

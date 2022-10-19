@@ -6,7 +6,7 @@
 /*   By: xle-boul <xle-boul@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:32:04 by xle-boul          #+#    #+#             */
-/*   Updated: 2022/10/19 22:32:37 by xle-boul         ###   ########.fr       */
+/*   Updated: 2022/10/19 23:59:26 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*routine(void *arg)
 	philo = arg;
 	if (philo->pos % 2 != 0)
 		philo_sleep(2);
-	while (philo->data->death == 0)
+	while (philo->data->end == 0)
 	{
 		pthread_mutex_lock(philo->l_fork);
 		print_line(philo, "has taken a fork");

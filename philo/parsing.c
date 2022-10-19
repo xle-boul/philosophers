@@ -6,7 +6,7 @@
 /*   By: xle-boul <xle-boul@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:26:22 by xle-boul          #+#    #+#             */
-/*   Updated: 2022/10/19 22:26:47 by xle-boul         ###   ########.fr       */
+/*   Updated: 2022/10/19 23:59:26 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	check_arguments(int ac, char **av)
 int	check_data(char **av, t_data *all)
 {
 	all->error = 0;
-	all->death = 0;
+	all->end = 0;
 	all->num_of_philo = ft_atol(av[1]);
 	all->ttdie = ft_atol(av[2]);
 	all->tteat = ft_atol(av[3]);

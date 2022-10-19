@@ -6,7 +6,7 @@
 /*   By: xle-boul <xle-boul@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 21:35:02 by xle-boul          #+#    #+#             */
-/*   Updated: 2022/10/19 23:33:42 by xle-boul         ###   ########.fr       */
+/*   Updated: 2022/10/19 23:59:26 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_data
 	int				ttsleep;
 	int				num_of_philo;
 	int				must_eat;
-	int				death;
+	int				end;
 	t_philo			*philo;
 	pthread_mutex_t	*forks_mutex;
 	pthread_mutex_t	print_mutex;
