@@ -6,7 +6,7 @@
 /*   By: xle-boul <xle-boul@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 21:35:02 by xle-boul          #+#    #+#             */
-/*   Updated: 2022/10/19 23:59:26 by xle-boul         ###   ########.fr       */
+/*   Updated: 2022/10/20 15:02:58 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ typedef struct s_data
 	int				end;
 	t_philo			*philo;
 	pthread_mutex_t	*forks_mutex;
+	pthread_mutex_t	time_mutex;
+	pthread_mutex_t	lock;
 	pthread_mutex_t	print_mutex;
 }				t_data;
 
@@ -71,8 +73,8 @@ void		*routine(void *arg);
 
 // utilities
 long		ft_atol(const char *str);
-long long	timestamp(void);
+long long	timestamp(pthread_mutex_t *time_mutex);
 void		print_line(t_philo *philo, char *str);
-void		philo_sleep(int given_time);
+void		philo_sleep(pthread_mutex_t *time_mutex, int given_time);
 
 #endif

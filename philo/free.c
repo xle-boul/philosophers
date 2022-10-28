@@ -6,7 +6,7 @@
 /*   By: xle-boul <xle-boul@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:33:22 by xle-boul          #+#    #+#             */
-/*   Updated: 2022/10/19 22:34:41 by xle-boul         ###   ########.fr       */
+/*   Updated: 2022/10/20 16:05:48 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	free_stuff(t_data *all)
 		}
 		free(all->forks_mutex);
 	}
-	pthread_mutex_unlock(&(all->print_mutex));
 	pthread_mutex_destroy(&(all->print_mutex));
+	pthread_mutex_destroy(&(all->lock));
+	pthread_mutex_destroy(&(all->time_mutex));
 }

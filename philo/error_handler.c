@@ -6,7 +6,7 @@
 /*   By: xle-boul <xle-boul@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:24:49 by xle-boul          #+#    #+#             */
-/*   Updated: 2022/10/20 00:39:28 by xle-boul         ###   ########.fr       */
+/*   Updated: 2022/10/20 10:33:31 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	error_handler(int error)
 {
 	if (error == 0)
-		printf("Error: please provide 5 or 6 numeric arguments\n");
+		printf("Error: please provide 4 or 5 numeric arguments\n");
 	if (error == 1)
 		printf("Error: data provided invalid\n");
 	if (error == 2)
@@ -28,7 +28,7 @@ void	error_handler(int error)
 void	error_handler_free(int error, t_data *all)
 {
 	if (error == 0)
-		printf("Error: please provide 5 or 6 numeric arguments\n");
+		printf("Error: please provide 4 or 5 numeric arguments\n");
 	if (error == 1)
 		printf("Error: data provided invalid\n");
 	if (error == 2)

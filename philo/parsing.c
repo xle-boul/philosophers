@@ -6,7 +6,7 @@
 /*   By: xle-boul <xle-boul@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:26:22 by xle-boul          #+#    #+#             */
-/*   Updated: 2022/10/19 23:59:26 by xle-boul         ###   ########.fr       */
+/*   Updated: 2022/10/20 16:20:18 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,13 @@ int	check_data(char **av, t_data *all)
 	all->ttdie = ft_atol(av[2]);
 	all->tteat = ft_atol(av[3]);
 	all->ttsleep = ft_atol(av[4]);
+	all->must_eat = 0;
 	if (av[5] != NULL)
 		all->must_eat = ft_atol(av[5]);
 	if (all->num_of_philo <= 0
-		|| all->ttdie < 0
-		|| all->tteat < 0
-		|| all->ttsleep < 0)
+		|| all->ttdie < 1
+		|| all->tteat < 1
+		|| all->ttsleep < 1)
 		return (1);
 	if (av[5] != NULL)
 		if (all->must_eat <= 0)

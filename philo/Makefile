@@ -6,7 +6,7 @@
 #    By: xle-boul <xle-boul@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/30 23:38:49 by xle-boul          #+#    #+#              #
-#    Updated: 2022/10/19 22:51:45 by xle-boul         ###   ########.fr        #
+#    Updated: 2022/10/20 16:49:07 by xle-boul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ END			= \e[0m
 NAME := philo
 
 CC := gcc
-CFLAGS := -Werror -Wall -Wextra
+CFLAGS := -Werror -Wall -Wextra -fsanitize=thread -g
 PTHREAD := -pthread
 
 SRC_DIR := sources

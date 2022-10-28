@@ -6,7 +6,7 @@
 /*   By: xle-boul <xle-boul@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:27:45 by xle-boul          #+#    #+#             */
-/*   Updated: 2022/10/20 00:25:51 by xle-boul         ###   ########.fr       */
+/*   Updated: 2022/10/20 16:04:54 by xle-boul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,18 @@ int	init_philo(t_data *all)
 	return (0);
 }
 
+int	init_mutex(t_data *all)
+{
+	if (pthread_mutex_init((&all->print_mutex), NULL)
+		|| pthread_mutex_init(&(all->time_mutex), NULL)
+		|| pthread_mutex_init(&(all->lock), NULL))
+	{
+		all->error = 3;
+		return (1);
+	}
+	return (0);
+}
+
 int	init_forks(t_data *all)
 {
 	int	i;
@@ -56,10 +68,7 @@ int	init_forks(t_data *all)
 		}
 		i++;
 	}
-	if (pthread_mutex_init((&all->print_mutex), NULL))
-	{
-		all->error = 3;
+	if (init_mutex(all) != 0)
 		return (1);
-	}
 	return (0);
 }
